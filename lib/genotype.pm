@@ -3,6 +3,7 @@ package Genotype;
 use strict;
 
 
+use Genotype::Individual;
 
 our $VERSION = '0.01';
 
@@ -10,13 +11,13 @@ our $VERSION = '0.01';
 # public methods
 #-------------------------------------------------------------------------------
 
+# the constructor only creates the object in memory. No parameters are needed
 sub new {
 	my $class = shift;
 	$class = ref($class) || $class;
 	
 	my %Options = @_;
 	my $self = {};
-	$self->{_file} = $Options{-file};
 
 	$self->{_ind} = {};
 	bless $self,$class;
@@ -25,6 +26,10 @@ sub new {
 
 
 
+sub readDataFromFile {
+	my ($self,$file) = @_;
+	return 1;
+}
 
 
 
